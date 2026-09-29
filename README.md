@@ -68,7 +68,7 @@ Change this in `backend/.env` → `ADMIN_SECRET`
 ## 📁 Project Structure
 
 ```
-Hackthon 9.0/
+Safe Campus/
 ├── frontend/              # Next.js 14 + TypeScript + Tailwind v4
 │   ├── app/
 │   │   ├── page.tsx       # Homepage
