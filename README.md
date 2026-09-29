@@ -1,8 +1,8 @@
-# 🛡️ SafeCampus – Verified Anonymous Campus Safety Reporting Platform
+# SafeCampus – Verified Anonymous Campus Safety Reporting Platform
 
 > A production-ready full-stack web application for COER University students to report safety incidents anonymously.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Backend Setup
 ```bash
@@ -35,7 +35,7 @@ npm run seed
 
 ---
 
-## 🔐 Authentication Flow
+## Authentication Flow
 
 1. User enters `@coeruniversity.ac.in` email — all other domains rejected
 2. OTP sent to email (logs to console in dev mode if SMTP not configured)
@@ -44,7 +44,7 @@ npm run seed
 
 ---
 
-## 📋 Pages
+## Pages
 
 | Page | URL | Description |
 |------|-----|-------------|
@@ -56,7 +56,7 @@ npm run seed
 
 ---
 
-## 🔑 Default Admin Credentials
+## Default Admin Credentials
 
 ```
 Secret: safecampus-admin-secret-2024
@@ -65,7 +65,7 @@ Change this in `backend/.env` → `ADMIN_SECRET`
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Safe Campus/
@@ -95,7 +95,7 @@ Safe Campus/
 
 ---
 
-## 🌐 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
@@ -113,7 +113,7 @@ Safe Campus/
 
 ---
 
-## 🤖 AI Classification
+## AI Classification
 
 Reports are automatically classified using keyword matching:
 - **Categories**: ragging, harassment, safety, other
