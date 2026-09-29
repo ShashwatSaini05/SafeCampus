@@ -19,10 +19,10 @@ const limiter = rateLimit({
   message: { error: 'Too many requests, please try again later.' },
 });
 
-const otpLimiter = rateLimit({
+const authLimiter = rateLimit({
   windowMs: 5 * 60 * 1000, // 5 minutes
-  max: 5,
-  message: { error: 'Too many OTP requests. Please wait 5 minutes.' },
+  max: 30,
+  message: { error: 'Too many auth requests. Please wait 5 minutes.' },
 });
 
 // Middleware
@@ -39,7 +39,7 @@ app.get('/api/health', (_req, res) => {
 });
 
 // Routes
-app.use('/api/auth', otpLimiter, authRoutes);
+app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/reports', reportsRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/upload', uploadRoutes);

@@ -56,9 +56,18 @@ CREATE POLICY "Users can insert reports" ON public.reports FOR INSERT WITH CHECK
   anonymous_id IN (SELECT anonymous_id FROM public.users WHERE id = auth.uid())
 );
 
+-- Allow users to insert & view evidence
+CREATE POLICY "Users can view own evidence" ON public.evidence FOR SELECT USING (true);
+CREATE POLICY "Users can insert evidence" ON public.evidence FOR INSERT WITH CHECK (true);
+
 -- 7. Create Admin Policies (Restricted to specific email)
--- This allows the admin email to view and update ALL reports
+-- This allows the admin email to view and update ALL reports and evidence
 CREATE POLICY "Admins can do everything on reports" ON public.reports 
+FOR ALL USING (
+  lower(auth.jwt() ->> 'email') = 'saurabhkumarjha011@gmail.com'
+);
+
+CREATE POLICY "Admins can do everything on evidence" ON public.evidence 
 FOR ALL USING (
   lower(auth.jwt() ->> 'email') = 'saurabhkumarjha011@gmail.com'
 );
